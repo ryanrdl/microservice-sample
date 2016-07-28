@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "copyToOutput": [
+      "app.config"
+    ]
+  },
+
+  "publishOptions": {
+    "include": [
+      "app.config"
+    ]
+  },
+
+  "dependencies": {
+    
+    "NServiceBus": "5.2.14",
+    "NServiceBus.RabbitMQ": "3.3.3",
+    "NServiceBus.Persistence.MongoDb": "6.0.4", 
+    "Topshelf": "4.0.1"
+  },
+
+  "frameworks": {
+    "net461": {
+      "dependencies": {
+        "PingMessages": {
+          "target": "project"
+        },
+        "PongMessages": {
+          "target": "project"
+        },
+        "SharedKernel": {
+          "target": "project"
+        }
+      }
+    }
+  }
+}

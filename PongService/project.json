@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    
+    "NServiceBus": "5.2.14",
+    "NServiceBus.Persistence.MongoDb": "6.0.4",
+    "NServiceBus.RabbitMQ": "3.3.3", 
+    "Topshelf": "4.0.1"
+  },
+
+  "frameworks": {
+    "net461": {
+      "dependencies": {
+        "PingMessages": {
+          "target": "project"
+        },
+        "PongMessages": {
+          "target": "project"
+        },
+        "SharedKernel": {
+          "target": "project"
+        }
+      }
+    }
+  }
+}

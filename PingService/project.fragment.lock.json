@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "exports": {
+    "PingMessages/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.1",
+      "compile": {
+        "bin/Debug/PingMessages.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/PingMessages.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/PingMessages.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "PongMessages/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.1",
+      "compile": {
+        "bin/Debug/PongMessages.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/PongMessages.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/PongMessages.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "SharedKernel/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.1",
+      "compile": {
+        "bin/Debug/SharedKernel.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/SharedKernel.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/SharedKernel.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "exports": {
+    "PongMessages/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.1",
+      "compile": {
+        "bin/Debug/PongMessages.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/PongMessages.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/PongMessages.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "SharedKernel/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.1",
+      "compile": {
+        "bin/Debug/SharedKernel.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/SharedKernel.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/SharedKernel.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}
