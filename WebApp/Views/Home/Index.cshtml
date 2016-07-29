@@ -78,29 +78,41 @@
                 } 
 
                 messages.client.pingReceived = function (message) {
+                    console.log(self.ping());
                     for (var i = 0; i < self.ping().length; i++) {
                         if (self.ping()[i].relay === message.Relay) {
                             self.ping()[i].status('recieved');
+                            console.log(i, message.Relay, 'status changed to receieved');
+                            break;
                         }
-                        break;
+                        else
+                            console.log(i, message.Relay, 'status NOT changed to receieved'); 
                     }
                 };
 
                 messages.client.pingComplete = function (message) {
+                    console.log(self.ping());
                     for (var i = 0; i < self.ping().length; i++) {
                         if (self.ping()[i].relay === message.Relay) {
                             self.ping()[i].status('complete');
+                            console.log(i, message.Relay, 'status changed to complete');
+                            break;
                         }
-                        break;
+                        else
+                            console.log(i, message.Relay, 'status NOT changed to complete'); 
                     }
                 };
-
+               
                 messages.client.pingFailed = function (message) {
+                    console.log(self.ping());
                     for (var i = 0; i < self.ping().length; i++) {
                         if (self.ping()[i].relay === message.Relay) {
                             self.ping()[i].status('failed');
+                            console.log(i, message.Relay, 'status changed to failed');
+                            break;
                         }
-                        break;
+                        else
+                            console.log(i, message.Relay, 'status NOT changed to failed');
                     }
                 };
             };
