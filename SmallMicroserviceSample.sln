@@ -25,6 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{46DE576A-056
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "svc", "svc", "{AC4CE68F-5D54-4741-8B38-4607B3F6FA4D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{E0AAE3C7-15D2-4EFC-B96A-94E8A427C07D}"
+	ProjectSection(SolutionItems) = preProject
+		publish.ps1 = publish.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
