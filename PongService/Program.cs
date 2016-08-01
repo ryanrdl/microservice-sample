@@ -7,10 +7,6 @@
     { 
         public static void Main(string[] args)
         {
-            PongConfiguration.RabbitMQConnectionString = "host=10.2.17.218;username=test;password=test;VirtualHost=demo";
-            PongConfiguration.MongoDbConnectionString = "mongodb://test:test@ds033015.mlab.com:33015/microservice-demo";
-            PongConfiguration.NServiceBusLicensePath = "c:\\dev\\NSBLicense.xml";
-            
             var host = new PongHost();
 
             host.Start();

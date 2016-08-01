@@ -7,12 +7,12 @@ namespace PingApi
 
     public class BusFactory
     {
-        public static void Init(PingConfiguration configuration)
+        public static void Init()
         {
             var cfg = new BusConfiguration();
-            cfg.LicensePath(configuration.NServiceBusLicensePath);
+            cfg.LicensePath(PingConfiguration.NServiceBusLicensePath);
 
-            cfg.UseTransport<RabbitMQTransport>().ConnectionString(configuration.RabbitMQConnectionString);
+            cfg.UseTransport<RabbitMQTransport>().ConnectionString(PingConfiguration.RabbitMQConnectionString);
             cfg.UseSerialization<JsonSerializer>();
 
             cfg.Conventions().DefiningCommandsAs(UnobtrusiveConventions.DefiningCommandsAs);

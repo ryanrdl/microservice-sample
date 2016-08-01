@@ -11,7 +11,7 @@ namespace WebApp
         public static void Init()
         {
             var cfg = new BusConfiguration();
-            cfg.EndpointName("PingPongClient");
+            cfg.EndpointName("PingPongClient"); 
             cfg.LicensePath(WebClientConfiguration.NServiceBusLicensePath);
 
             cfg.UseTransport<RabbitMQTransport>().ConnectionString(WebClientConfiguration.RabbitMQConnectionString);

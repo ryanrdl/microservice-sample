@@ -9,14 +9,14 @@ namespace PingService
     { 
         private readonly IStartableBus _bus;
 
-        public PingHost(PingConfiguration configuration)
+        public PingHost()
         { 
             var cfg = new BusConfiguration();
             cfg.EndpointName(nameof(PingService));
-            cfg.LicensePath(configuration.NServiceBusLicensePath);
+            cfg.LicensePath(PingConfiguration.NServiceBusLicensePath);
 
-            cfg.UseTransport<RabbitMQTransport>().ConnectionString(configuration.RabbitMQConnectionString);
-            cfg.UsePersistence<MongoDbPersistence>().SetConnectionString(configuration.MongoDbConnectionString);
+            cfg.UseTransport<RabbitMQTransport>().ConnectionString(PingConfiguration.RabbitMQConnectionString);
+            cfg.UsePersistence<MongoDbPersistence>().SetConnectionString(PingConfiguration.MongoDbConnectionString);
             cfg.UseSerialization<JsonSerializer>();
 
             cfg.Conventions().DefiningCommandsAs(UnobtrusiveConventions.DefiningCommandsAs);

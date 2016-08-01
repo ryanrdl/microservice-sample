@@ -1,10 +1,12 @@
 ﻿namespace PongApi
 {
+    using SharedKernel;
+
     public class PongConfiguration
     {
-        public string RabbitMQConnectionString { get; set; } 
-        public string NServiceBusLicensePath { get; set; }
-        public string UseUrls { get; set; } = "http://*:19702";
+        public string RabbitMQConnectionString { get; set; } = Env.Get(nameof(RabbitMQConnectionString));
+        public string NServiceBusLicensePath { get; set; } = Env.Get(nameof(NServiceBusLicensePath));
+        public string UseUrls { get; set; } = Env.Get($"{nameof(PongApi)}{nameof(UseUrls)}", "http://*:19702"); 
 
         public string[] GetUseUrls()
         {
