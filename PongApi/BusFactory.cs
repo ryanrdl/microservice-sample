@@ -7,12 +7,12 @@ namespace PongApi
 
     public class BusFactory
     {
-        public static void Init(PongConfiguration configuration)
+        public static void Init()
         {
             var cfg = new BusConfiguration();
-            cfg.LicensePath(configuration.NServiceBusLicensePath);
+            cfg.LicensePath(PongConfiguration.NServiceBusLicensePath);
 
-            cfg.UseTransport<RabbitMQTransport>().ConnectionString(configuration.RabbitMQConnectionString);
+            cfg.UseTransport<RabbitMQTransport>().ConnectionString(PongConfiguration.RabbitMQConnectionString);
             cfg.UseSerialization<JsonSerializer>();
 
             cfg.Conventions().DefiningCommandsAs(UnobtrusiveConventions.DefiningCommandsAs);

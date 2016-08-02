@@ -6,17 +6,11 @@ namespace PongApi
     public class Program
     {
         public static void Main(string[] args)
-        {
-            var config = new PongConfiguration
-            {
-                RabbitMQConnectionString = "host=10.2.17.218;username=test;password=test;VirtualHost=demo",
-                NServiceBusLicensePath = "c:\\dev\\NSBLicense.xml"
-            };
-
-            BusFactory.Init(config);
+        { 
+            BusFactory.Init();
 
             var host = new WebHostBuilder()
-                .UseUrls(config.GetUseUrls())
+                .UseUrls(PongConfiguration.GetUseUrls())
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()

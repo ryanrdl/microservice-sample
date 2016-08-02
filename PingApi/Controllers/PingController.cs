@@ -10,6 +10,17 @@ namespace PingApi.Controllers
     [EnableCors("AllowAll")]
     public class PingController : Controller
     {
+        [HttpGet("")]
+        public object Get()
+        {
+            return new
+            {
+                PingConfiguration.NServiceBusLicensePath,
+                PingConfiguration.RabbitMQConnectionString,
+                ServerUrls = PingConfiguration.GetUseUrls()
+            };
+        }
+
         [HttpPost("")]
         public SendPing Post(SendPing message)
         {

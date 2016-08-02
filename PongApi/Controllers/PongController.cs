@@ -9,6 +9,17 @@ namespace PongApi.Controllers
     [EnableCors("AllowAll")]
     public class PongController : Controller
     {
+        [HttpGet("")]
+        public object Get()
+        {
+            return new
+            {
+                PongConfiguration.NServiceBusLicensePath,
+                PongConfiguration.RabbitMQConnectionString,
+                ServerUrls = PongConfiguration.GetUseUrls()
+            };
+        }
+
         [HttpPost("")]
         public void Post(SendPong message)
         { 
