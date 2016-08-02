@@ -1,0 +1,17 @@
+﻿--- 
+applications: 
+  - 
+    buildpack: binary_buildpack
+    command: "cmd /c .\\PingApi.exe --server.urls=http://0.0.0.0"
+    env: 
+      ASPNETCORE_ENVIRONMENT: Production
+      NServiceBusLicensePath: .\NSBLicense.xml
+      RabbitMQConnectionString: host=10.15.30.155;username=eb0b549e-3759-41fe-ae50-10f4ab3d728a;password=hr317rah1un2jll9s2dpfrg95u
+      UseUrls: http://0.0.0.0
+    health-check-type: none
+    host: pingApi
+    memory: 512M
+    name: pingApi
+    services: 
+      - pingpongrabbitmq
+    stack: windows2012R2

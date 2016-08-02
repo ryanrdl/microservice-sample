@@ -37,7 +37,8 @@
     "preserveCompilationContext": true,
     "copyToOutput": [
       "web.config",
-      "app.config"
+      "app.config",
+      "manifest.yml"
     ]
   },
 
@@ -58,7 +59,8 @@
       "Areas/**/Views",
       "appsettings.json",
       "web.config",
-      "app.config"
+      "app.config",
+      "manifest.yml"
     ]
   },
 

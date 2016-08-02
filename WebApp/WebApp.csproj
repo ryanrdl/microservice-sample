@@ -197,6 +197,7 @@
     </Content>
     <None Include="Content\_references.js" />
     <Content Include="Global.asax" />
+    <Content Include="manifest.yml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />

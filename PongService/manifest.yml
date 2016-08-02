@@ -1,0 +1,17 @@
+﻿--- 
+applications: 
+  - 
+    buildpack: binary_buildpack
+    command: "cmd /c .\\PongService.exe"
+    env: 
+      ASPNETCORE_ENVIRONMENT: Production
+      MongoDbConnectionString: "mongodb://test:test@ds033015.mlab.com:33015/microservice-demo"
+      NServiceBusLicensePath: .\NSBLicense.xml
+      RabbitMQConnectionString: host=10.15.30.155;username=eb0b549e-3759-41fe-ae50-10f4ab3d728a;password=hr317rah1un2jll9s2dpfrg95u
+    health-check-type: none
+    host: pongService
+    memory: 512M
+    name: pongService
+    services: 
+      - pingpongrabbitmq
+    stack: windows2012R2

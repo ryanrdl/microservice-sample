@@ -3,13 +3,15 @@
   "buildOptions": {
     "emitEntryPoint": true,
     "copyToOutput": [
-      "app.config"
+      "app.config",
+      "manifest.yml"
     ]
   },
 
   "publishOptions": {
     "include": [
-      "app.config"
+      "app.config",
+      "manifest.yml"
     ]
   },
 
@@ -17,8 +19,7 @@
     
     "NServiceBus": "5.2.14",
     "NServiceBus.RabbitMQ": "3.3.3",
-    "NServiceBus.Persistence.MongoDb": "6.0.4", 
-    "Topshelf": "4.0.1"
+    "NServiceBus.Persistence.MongoDb": "6.0.4" 
   },
 
   "frameworks": {

@@ -1,15 +1,25 @@
 {
   "version": "1.0.0-*",
   "buildOptions": {
-    "emitEntryPoint": true
+    "emitEntryPoint": true,
+    "copyToOutput": [
+      "app.config",
+      "manifest.yml"
+    ]
+  },
+
+  "publishOptions": {
+    "include": [
+      "app.config",
+      "manifest.yml"
+    ]
   },
 
   "dependencies": {
-    
+
     "NServiceBus": "5.2.14",
-    "NServiceBus.Persistence.MongoDb": "6.0.4",
-    "NServiceBus.RabbitMQ": "3.3.3", 
-    "Topshelf": "4.0.1"
+    "NServiceBus.RabbitMQ": "3.3.3",
+    "NServiceBus.Persistence.MongoDb": "6.0.4"
   },
 
   "frameworks": {

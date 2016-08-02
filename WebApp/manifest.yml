@@ -1,0 +1,16 @@
+﻿---
+applications:
+- name: pingPongWebApp
+  memory: 512M
+  host: pingPongWebApp
+  stack: windows2012R2
+  health-check-type: none 
+  buildpack: binary_buildpack
+  env:
+    PingUrl: development
+    PongUrl: development
+    RabbitMQConnectionString: development
+    NServiceBusLicensePath: development
+    MongoDbConnectionString: development
+  services:
+   - myDiscoveryService
