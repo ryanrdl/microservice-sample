@@ -2,34 +2,22 @@
     [Parameter(Mandatory=$true)]
 	[string] $outputRootDir,
     [Parameter(Mandatory=$true)]
-    [string]$nsbLicensePath,
+    [string] $nsbLicensePath,
 	[string] $configuration = "Release" 			
 )
 
-function Test-XMLFile {
-    <#
-    .SYNOPSIS
-    Test the validity of an XML file
-    #>
-    [CmdletBinding()]
-    param (
-    [parameter(mandatory=$true)][ValidateNotNullorEmpty()][string]$xmlFilePath
-    )
-    
-    # Check the file exists
-    if (!(Test-Path -Path $xmlFilePath)){
-        throw "$xmlFilePath is not valid. Please provide a valid path to the .xml fileh"
-    }
-    # Check for Load or Parse errors when loading the XML file
-    $xml = New-Object System.Xml.XmlDocument
-    try {
-        $xml.Load((Get-ChildItem -Path $xmlFilePath).FullName)
-        return $true
-    }
-    catch [System.Xml.XmlException] {
-        Write-Verbose "$xmlFilePath : $($_.toString())"
-        return $false
-    }
+# Check the file exists
+if (!(Test-Path -Path $nsbLicensePath)){
+	throw "$nsbLicensePath is not valid. Please provide a valid path to the .xml NServiceBus license file"
+}
+# Check for Load or Parse errors when loading the XML file
+$xml = New-Object System.Xml.XmlDocument
+try {
+	$xml.Load((Get-ChildItem -Path $nsbLicensePath).FullName)
+	Write-Host "Successfully validated $nsbLicensePath as a valid XML"
+}
+catch [System.Xml.XmlException] {
+	throw "$nsbLicensePath is not valid. Please provide a valid path to the .xml NServiceBus license file"
 }
 
 $pingApiDir = "$outputRootDir\PingApi"
@@ -49,22 +37,15 @@ dotnet publish .\PongService -o $pongServiceDir -c $configuration -r win7-x64
 
 & (Resolve-Path "C:\Program Files (x86)\MSBuild\*\Bin\MSBuild.exe") .\WebApp\WebApp.csproj /t:WebPublish /p:Configuration=$configuration /p:WebPublishMethod=FileSystem /p:publishUrl=$outputRootDir\WebApp
 
-if (Test-Path $nsbLicensePath) {
-	if (Test-XMLFile $nsbLicensePath) {
-		Copy-Item $nsbLicensePath .\PingApi\NSBLicense.xml
-		Copy-Item $nsbLicensePath .\PingService\NSBLicense.xml
-		Copy-Item $nsbLicensePath .\PongApi\NSBLicense.xml
-		Copy-Item $nsbLicensePath .\PongService\NSBLicense.xml
-		
-		#Copy-Item $nsbLicensePath .\WebApp\NSBLicense.xml
-	}
-	else {
-		throw "NService license found at $nsbLicensePath is not valid XML"
-	}			
-}
-else {
-	throw "NService license not found at $nsbLicensePath"
-}
+
+
+Copy-Item $nsbLicensePath $pingApiDir\NSBLicense.xml 
+Copy-Item $nsbLicensePath $pingServiceDir\NSBLicense.xml 
+Copy-Item $nsbLicensePath $pongApiDir\NSBLicense.xml 
+Copy-Item $nsbLicensePath $pongServiceDir\NSBLicense.xml 
+
+#Copy-Item $nsbLicensePath .\WebApp\NSBLicense.xml
+#Write-Host "$nsbLicensePath copied to WebApp"
 
 $pcfPushScriptPath = "$outputRootDir\pcf-push.ps1"
 

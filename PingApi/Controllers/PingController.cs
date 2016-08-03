@@ -16,8 +16,7 @@ namespace PingApi.Controllers
             return new
             {
                 PingConfiguration.NServiceBusLicensePath,
-                PingConfiguration.RabbitMQConnectionString,
-                ServerUrls = PingConfiguration.GetUseUrls()
+                PingConfiguration.RabbitMQConnectionString
             };
         }
 

@@ -15,8 +15,7 @@ namespace PongApi.Controllers
             return new
             {
                 PongConfiguration.NServiceBusLicensePath,
-                PongConfiguration.RabbitMQConnectionString,
-                ServerUrls = PongConfiguration.GetUseUrls()
+                PongConfiguration.RabbitMQConnectionString 
             };
         }
 
