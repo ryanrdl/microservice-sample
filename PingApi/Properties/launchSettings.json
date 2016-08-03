@@ -18,7 +18,14 @@
     },
     "PingApi": {
       "commandName": "PingApi",
-      "launchUrl": "http://localhost:5000/api/values",
+      "launchUrl": "http://localhost:19701/api/values",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "server.urls": "http://0.0.0.0:19701"
+      }
+    },
+    "web": {
+      "commandName": "web",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

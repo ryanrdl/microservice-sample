@@ -5,8 +5,7 @@
 ### PingApi
 
 1. NServiceBusLicensePath **(i.e. c:\dev\NSBLicense.xml)**
-2. RabbitMQConnectionString **(defaults to 60 seconds)**
-3. PingApiUseUrls **(i.e. http://*:19701)**
+2. RabbitMQConnectionString **(defaults to 60 seconds)** 
 
 ### PingService
 
@@ -17,8 +16,7 @@
 ### PongApi
 
 1. NServiceBusLicensePath **(i.e. c:\dev\NSBLicense.xml)**
-2. RabbitMQConnectionString **(defaults to 60 seconds)**
-3. PongApiUseUrls **(i.e. http://*:19702)** 
+2. RabbitMQConnectionString **(defaults to 60 seconds)** 
 
 ### PongService
 

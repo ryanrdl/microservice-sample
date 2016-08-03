@@ -2,12 +2,11 @@
 applications: 
   - 
     buildpack: binary_buildpack
-    command: ".\\PongApi.exe --server.urls=http://0.0.0.0"
+    command: ".\\PongApi.exe --server.urls=http://0.0.0.0:%PORT%"
     env: 
       ASPNETCORE_ENVIRONMENT: Production
       NServiceBusLicensePath: .\NSBLicense.xml
-      RabbitMQConnectionString: host=10.15.30.155;username=eb0b549e-3759-41fe-ae50-10f4ab3d728a;password=hr317rah1un2jll9s2dpfrg95u
-      UseUrls: "http://0.0.0.0"
+      RabbitMQConnectionString: host=10.15.30.155;username=eb0b549e-3759-41fe-ae50-10f4ab3d728a;password=hr317rah1un2jll9s2dpfrg95u 
     health-check-type: none
     host: pongApi
     memory: 512M
