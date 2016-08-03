@@ -37,12 +37,17 @@ if (Test-Path $nsbLicensePath) {
 		Copy-Item $nsbLicensePath .\PongService\NSBLicense.xml
 		#Copy-Item $nsbLicensePath .\WebApp\NSBLicense.xml
 
-		& cf push -f .\PingApi
-		& cf push -f .\PingService
-		& cf push -f .\PongApi
-		& cf push -f .\PongService
-
-		#& cf push -f .\WebApp
+		& cd PingApi
+		& cf push
+		& cd ..\PingService
+		& cf push
+		& cd ..\PongApi
+		& cf push
+		& cd ..\PongService
+		& cf push
+		
+		#& cd ..\WebApp
+		#& cf push
 	}
 	else {
 		throw "NService license found at $nsbLicensePath is not valid XML"
