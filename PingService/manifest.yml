@@ -7,7 +7,7 @@ applications:
       ASPNETCORE_ENVIRONMENT: Production
       MongoDbConnectionString: "mongodb://test:test@ds033015.mlab.com:33015/microservice-demo"
       NServiceBusLicensePath: .\NSBLicense.xml
-      RabbitMQConnectionString: host=10.15.30.155;username=eb0b549e-3759-41fe-ae50-10f4ab3d728a;password=hr317rah1un2jll9s2dpfrg95u
+      RabbitMQConnectionString: host=10.15.30.155;username=043c4c8e-a52a-419d-b6ea-f76bb3af6a5f;password=2c0k07vnbe6v8tccnt86jkjogr;VirtualHost=d3d3e94f-b0b7-4bdc-a3cd-4ebf195ff253
     health-check-type: none
     host: pingService
     memory: 512M

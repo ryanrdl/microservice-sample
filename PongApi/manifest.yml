@@ -6,7 +6,7 @@ applications:
     env: 
       ASPNETCORE_ENVIRONMENT: Production
       NServiceBusLicensePath: .\NSBLicense.xml
-      RabbitMQConnectionString: host=10.15.30.155;username=eb0b549e-3759-41fe-ae50-10f4ab3d728a;password=hr317rah1un2jll9s2dpfrg95u 
+      RabbitMQConnectionString: host=10.15.30.155;username=a20cbccb-84ed-48c7-b2a8-9167eef6cf00;password=od8s360e9lpkadm5spnq1uq8gr;VirtualHost=d3d3e94f-b0b7-4bdc-a3cd-4ebf195ff253
     health-check-type: none
     host: pongApi
     memory: 512M

@@ -11,10 +11,14 @@
 
             host.Start();
 
+#if DEBUG
             while (Menu(host))
             {
-                
+
             }
+#else
+            Console.Read();
+#endif
         }
 
         public static bool Menu(PongHost host)
