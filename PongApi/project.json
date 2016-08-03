@@ -1,4 +1,4 @@
-﻿{
+{
   "dependencies": {
     
     "Microsoft.AspNetCore.Mvc": "1.0.0",
@@ -20,8 +20,9 @@
   },
 
   "frameworks": {
-    "net461": {
+    "net451": {
       "dependencies": {
+        "Microsoft.NETCore.Platforms": "1.0.1",
         "PongMessages": {
           "target": "project"
         },

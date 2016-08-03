@@ -1,6 +1,5 @@
 {
-  "dependencies": {
-    
+  "dependencies": {    
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
@@ -20,8 +19,9 @@
   },
 
   "frameworks": {
-    "net461": {
+    "net451": {
       "dependencies": {
+        "Microsoft.NETCore.Platforms": "1.0.1",
         "PingMessages": {
           "target": "project"
         },
@@ -60,7 +60,7 @@
       "appsettings.json",
       "web.config",
       "app.config",
-      "manifest.yml"
+      "manifest.yml" 
     ]
   },
 

@@ -2,7 +2,7 @@
 applications: 
   - 
     buildpack: binary_buildpack
-    command: "cmd /c .\\PongApi.exe --server.urls=http://0.0.0.0"
+    command: ".\\PongApi.exe --server.urls=http://0.0.0.0"
     env: 
       ASPNETCORE_ENVIRONMENT: Production
       NServiceBusLicensePath: .\NSBLicense.xml

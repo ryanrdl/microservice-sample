@@ -2,7 +2,7 @@
 applications: 
   - 
     buildpack: binary_buildpack
-    command: "cmd /c .\\PingService.exe"
+    command: ".\\PingService.exe"
     env: 
       ASPNETCORE_ENVIRONMENT: Production
       MongoDbConnectionString: "mongodb://test:test@ds033015.mlab.com:33015/microservice-demo"
