@@ -24,6 +24,7 @@ $pingApiDir = "$outputRootDir\PingApi"
 $pingServiceDir = "$outputRootDir\PingService"
 $pongApiDir = "$outputRootDir\PongApi"
 $pongServiceDir = "$outputRootDir\PongService"
+$webAppDir = "$outputRootDir\WebApp"
 
 If (Test-Path $pingApiDir) { Remove-Item -Recurse -Force $pingApiDir }
 If (Test-Path $pingServiceDir) { Remove-Item -Recurse -Force $pingServiceDir }
@@ -37,15 +38,11 @@ dotnet publish .\PongService -o $pongServiceDir -c $configuration -r win7-x64
 
 & (Resolve-Path "C:\Program Files (x86)\MSBuild\*\Bin\MSBuild.exe") .\WebApp\WebApp.csproj /t:WebPublish /p:Configuration=$configuration /p:WebPublishMethod=FileSystem /p:publishUrl=$outputRootDir\WebApp
 
-
-
 Copy-Item $nsbLicensePath $pingApiDir\NSBLicense.xml 
 Copy-Item $nsbLicensePath $pingServiceDir\NSBLicense.xml 
 Copy-Item $nsbLicensePath $pongApiDir\NSBLicense.xml 
 Copy-Item $nsbLicensePath $pongServiceDir\NSBLicense.xml 
-
-#Copy-Item $nsbLicensePath .\WebApp\NSBLicense.xml
-#Write-Host "$nsbLicensePath copied to WebApp"
+Copy-Item $nsbLicensePath $webAppDir\NSBLicense.xml 
 
 $pcfPushScriptPath = "$outputRootDir\pcf-push.ps1"
 

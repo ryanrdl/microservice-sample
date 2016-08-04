@@ -1,15 +1,22 @@
 namespace WebApp
 {
     using System.Collections.Generic;
-    using System.Reflection; 
+    using System.IO;
+    using System.Reflection;
+    using System.Web.Hosting;
     using NServiceBus;
+    using NServiceBus.Logging;
     using NServiceBus.Persistence.MongoDB;
     using SharedKernel;
 
     public class BusFactory
     {
+        private const string LogPath = "~/App_Data/";
+
         public static void Init()
-        {
+        { 
+            LogManager.Use<NLogFactory>();
+
             var cfg = new BusConfiguration();
             cfg.EndpointName("PingPongClient"); 
             cfg.LicensePath(WebClientConfiguration.NServiceBusLicensePath);
@@ -27,7 +34,7 @@ namespace WebApp
             cfg.AutoSubscribe();
 
             Current = Bus.Create(cfg).Start();
-        }
+        } 
 
         public static IBus Current { get; private set; }
 

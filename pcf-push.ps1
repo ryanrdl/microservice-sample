@@ -7,7 +7,7 @@
 & cd ..\PongService
 & cf push
 		
-#& cd ..\WebApp
-#& cf push
+& cd ..\WebApp
+& cf push
 
 & cd ..
