@@ -1,0 +1,1 @@
+& stackato push --manifest hcf_manifest.yml -n

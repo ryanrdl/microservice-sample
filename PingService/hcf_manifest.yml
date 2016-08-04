@@ -1,0 +1,16 @@
+﻿--- 
+applications: 
+  - 
+    buildpack: https://github.com/cloudfoundry/binary-buildpack.git
+    command: ".\\PingService.exe"
+    env: 
+      ASPNETCORE_ENVIRONMENT: Production
+      MongoDbConnectionString: "mongodb://test:test@ds033015.mlab.com:33015/microservice-demo"
+      NServiceBusLicensePath: .\NSBLicense.xml
+      RabbitMQConnectionString: host=10.15.30.16;username=u78O2J9jEjEDX;password=psn6EsfjZdDyk;VirtualHost=v5bfd9bdcfd324a009522bcc21f84f138 
+    host: pingService
+    memory: 512M
+    name: pingService
+    services: 
+      - rabbitmq3-3746
+    stack: win2012r2

@@ -4,14 +4,14 @@
     "emitEntryPoint": true,
     "copyToOutput": [
       "app.config",
-      "manifest.yml"
+      "*.yml"
     ]
   },
 
   "publishOptions": {
     "include": [
       "app.config",
-      "manifest.yml"
+      "*.yml"
     ]
   },
 

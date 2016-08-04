@@ -39,7 +39,7 @@
     "copyToOutput": [
       "web.config",
       "app.config",
-      "manifest.yml"
+      "*.yml"
     ]
   },
 
@@ -61,7 +61,7 @@
       "appsettings.json",
       "web.config",
       "app.config",
-      "manifest.yml"
+      "*.yml"
     ]
   },
 

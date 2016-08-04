@@ -27,6 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "svc", "svc", "{AC4CE68F-5D5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{E0AAE3C7-15D2-4EFC-B96A-94E8A427C07D}"
 	ProjectSection(SolutionItems) = preProject
+		hcf-push.ps1 = hcf-push.ps1
 		pcf-createServices.ps1 = pcf-createServices.ps1
 		pcf-push.ps1 = pcf-push.ps1
 		publish.ps1 = publish.ps1
