@@ -17,6 +17,7 @@ namespace WebApp
             cfg.UseTransport<RabbitMQTransport>().ConnectionString(WebClientConfiguration.RabbitMQConnectionString);
             cfg.UsePersistence<MongoDbPersistence>().SetConnectionString(WebClientConfiguration.MongoDbConnectionString);
             cfg.UseSerialization<JsonSerializer>();
+            cfg.EnableInstallers();
 
             cfg.Conventions().DefiningCommandsAs(UnobtrusiveConventions.DefiningCommandsAs);
             cfg.Conventions().DefiningEventsAs(UnobtrusiveConventions.DefiningEventsAs);

@@ -5,12 +5,11 @@ namespace PingApi
 {
     using System;
     using Microsoft.Extensions.Configuration;
-    using RabbitMQ.Client.Framing;
 
     public class Program
     {
         public static void Main(string[] args)
-        {
+        { 
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
             var currentDirectory = Directory.GetCurrentDirectory();
 

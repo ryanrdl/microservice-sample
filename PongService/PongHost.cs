@@ -21,6 +21,7 @@
             cfg.UseTransport<RabbitMQTransport>().ConnectionString(PongConfiguration.RabbitMQConnectionString);
             cfg.UsePersistence<MongoDbPersistence>().SetConnectionString(PongConfiguration.MongoDbConnectionString);
             cfg.UseSerialization<JsonSerializer>();
+            cfg.EnableInstallers();
 
             cfg.Conventions().DefiningCommandsAs(UnobtrusiveConventions.DefiningCommandsAs);
             cfg.Conventions().DefiningEventsAs(UnobtrusiveConventions.DefiningEventsAs);

@@ -18,6 +18,7 @@ namespace PingService
             cfg.UseTransport<RabbitMQTransport>().ConnectionString(PingConfiguration.RabbitMQConnectionString);
             cfg.UsePersistence<MongoDbPersistence>().SetConnectionString(PingConfiguration.MongoDbConnectionString);
             cfg.UseSerialization<JsonSerializer>();
+            cfg.EnableInstallers();
 
             cfg.Conventions().DefiningCommandsAs(UnobtrusiveConventions.DefiningCommandsAs);
             cfg.Conventions().DefiningEventsAs(UnobtrusiveConventions.DefiningEventsAs);
