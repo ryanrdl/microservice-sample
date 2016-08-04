@@ -13,7 +13,7 @@
         private static int GetTimeout()
         {
             int timeout = 60, defaultTimeout = 60;
-            var value = Env.Get($"{nameof(PongService)}{nameof(TimeoutThresholdSeconds)}", throwExceptionIfNotFound:false);
+            var value = Env.Get($"{nameof(TimeoutThresholdSeconds)}", throwExceptionIfNotFound:false);
             
             if (int.TryParse(value, out timeout))
                 return Math.Min(6000, Math.Max(0, timeout));
