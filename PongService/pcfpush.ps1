@@ -1,0 +1,1 @@
+& cf push -f pcf_manifest.yml

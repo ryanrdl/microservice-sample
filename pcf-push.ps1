@@ -1,13 +1,16 @@
 & cd .\PingApi
-& cf push
+& .\pcfpush.ps1
+
 & cd ..\PingService
-& cf push
+& .\pcfpush.ps1
+
 & cd ..\PongApi
-& cf push
+& .\pcfpush.ps1
+
 & cd ..\PongService
-& cf push
+& .\pcfpush.ps1
 		
 & cd ..\WebApp
-& cf push
+& .\pcfpush.ps1
 
 & cd ..
