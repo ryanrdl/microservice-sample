@@ -4,14 +4,16 @@
     "emitEntryPoint": true,
     "copyToOutput": [
       "app.config",
-      "*.yml"
+      "*.yml",
+      "*.ps1"
     ]
   },
 
   "publishOptions": {
     "include": [
       "app.config",
-      "*.yml"
+      "*.yml",
+      "*.ps1"
     ]
   },
 

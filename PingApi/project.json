@@ -39,7 +39,8 @@
     "copyToOutput": [
       "web.config",
       "app.config",
-      "*.yml"
+      "*.yml",
+      "*.ps1"
     ]
   },
 
@@ -61,7 +62,8 @@
       "appsettings.json",
       "web.config",
       "app.config",
-      "*.yml" 
+      "*.yml",
+      "*.ps1"
     ]
   },
 
