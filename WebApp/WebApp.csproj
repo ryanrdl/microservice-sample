@@ -207,6 +207,8 @@
     <Content Include="Global.asax" />
     <Content Include="pcf_manifest.yml" />
     <Content Include="pcfpush.ps1" />
+    <Content Include="hcf_manifest.yml" />
+    <Content Include="hcfpush.ps1" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
