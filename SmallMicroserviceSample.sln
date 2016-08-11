@@ -31,6 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{E0AAE3
 		pcf-createServices.ps1 = pcf-createServices.ps1
 		pcf-push.ps1 = pcf-push.ps1
 		publish.ps1 = publish.ps1
+		run.ps1 = run.ps1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp2", "WebApp2\WebApp2.csproj", "{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}"
