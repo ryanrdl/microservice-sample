@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WebApp
+﻿namespace WebApp
 {
     using Microsoft.AspNet.SignalR;
     using Microsoft.AspNet.SignalR.Hubs;

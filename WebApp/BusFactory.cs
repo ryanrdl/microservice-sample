@@ -1,9 +1,7 @@
 namespace WebApp
 {
     using System.Collections.Generic;
-    using System.IO;
     using System.Reflection;
-    using System.Web.Hosting;
     using NServiceBus;
     using NServiceBus.Logging;
     using NServiceBus.Persistence.MongoDB;
@@ -11,8 +9,6 @@ namespace WebApp
 
     public class BusFactory
     {
-        private const string LogPath = "~/App_Data/";
-
         public static void Init()
         { 
             LogManager.Use<NLogFactory>();

@@ -10,8 +10,6 @@ namespace WebApp2
 
     public class BusFactory
     {
-        private const string LogPath = "~/App_Data/";
-
         public static void Init()
         { 
             LogManager.Use<NLogFactory>();

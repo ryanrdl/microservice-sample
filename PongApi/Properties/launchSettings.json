@@ -17,8 +17,7 @@
       }
     },
     "PongApi": {
-      "commandName": "Project",
-      "launchBrowser": true,
+      "commandName": "PongApi",
       "launchUrl": "http://localhost:19702/api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
