@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="MessageHub.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -263,6 +264,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PingMessages\PingMessages.csproj">
+      <Project>{740de886-24d7-4d12-9e27-4c25d73d7275}</Project>
+      <Name>PingMessages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PongMessages\PongMessages.csproj">
+      <Project>{6d972673-8508-48a3-95fe-490eb7cfbda8}</Project>
+      <Name>PongMessages</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SharedKernel\SharedKernel.csproj">
       <Project>{fb2582b9-253d-4c7d-a7c4-5567eb402b1b}</Project>
       <Name>SharedKernel</Name>
