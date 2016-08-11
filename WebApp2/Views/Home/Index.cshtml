@@ -1,0 +1,122 @@
+﻿@using WebApp
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase
+<style>
+    td {
+        padding: 5px 10px;
+        margin: auto;
+        align-content: center;
+        text-align: center;
+    }
+</style>
+<br /><br /><br />
+<div class="row">
+    <button type="button" class="btn btn-primary btn-lg btn-block" data-bind="click: doPing">Ping</button>
+</div>
+<hr />
+<div class="row">
+    <table>
+        <thead>
+        <tr>
+            <th>Ping</th>
+            <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: ping">
+            <tr data-bind="if : status() == 'waiting'" class="bg-info">
+                <td><span data-bind="text: relay"></span></td>
+                <td><span data-bind="text: status()"></span></td>
+            </tr>
+            <tr data-bind="if : status() == 'recieved'" class="bg-warning">
+                <td><span data-bind="text: relay"></span></td>
+                <td><button type="button" class="btn btn-primary btn-xs" data-bind="click : $root.doPong">Pong</button></td>
+            </tr>
+            <tr data-bind="if : status() == 'complete'" class="bg-success">
+                <td><span data-bind="text: relay"></span></td>
+                <td><span data-bind="text: status()"></span></td>
+            </tr>
+            <tr data-bind="if : status() == 'failed'" class="bg-danger">
+                <td><span data-bind="text: relay"></span></td>
+                <td><span data-bind="text: status()"></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div> 
+
+@section scripts
+{
+    <script type="text/javascript"> 
+        var pingUrl = '@WebClientConfiguration.PingUrl';
+        var pongUrl = '@WebClientConfiguration.PongUrl';
+
+        $(function () {
+            var messages = $.connection.messageHub;
+
+            // Start the connection.
+            $.connection.hub.start().done(function () { 
+            });
+
+            var PingViewModel = function() {
+                var self = this;
+
+                self.ping = ko.observableArray([
+                ]);
+
+                self.doPing = function() {
+                    $.post(pingUrl, {}, function(data) {
+                        self.ping.push({
+                            relay: data.relay,
+                            status: ko.observable('waiting') 
+                        });
+                    });
+                };
+
+                self.doPong = function(ping) {
+                    $.post(pongUrl, { relay: ping.relay }, function() {
+
+                    });
+                } 
+
+                messages.client.pingReceived = function (message) {
+                    console.log(self.ping());
+                    for (var i = 0; i < self.ping().length; i++) {
+                        if (self.ping()[i].relay === message.Relay) {
+                            self.ping()[i].status('recieved');
+                            console.log(i, message.Relay, 'status changed to receieved');
+                            break;
+                        }
+                        else
+                            console.log(i, message.Relay, 'status NOT changed to receieved'); 
+                    }
+                };
+
+                messages.client.pingComplete = function (message) {
+                    console.log(self.ping());
+                    for (var i = 0; i < self.ping().length; i++) {
+                        if (self.ping()[i].relay === message.Relay) {
+                            self.ping()[i].status('complete');
+                            console.log(i, message.Relay, 'status changed to complete');
+                            break;
+                        }
+                        else
+                            console.log(i, message.Relay, 'status NOT changed to complete'); 
+                    }
+                };
+               
+                messages.client.pingFailed = function (message) {
+                    console.log(self.ping());
+                    for (var i = 0; i < self.ping().length; i++) {
+                        if (self.ping()[i].relay === message.Relay) {
+                            self.ping()[i].status('failed');
+                            console.log(i, message.Relay, 'status changed to failed');
+                            break;
+                        }
+                        else
+                            console.log(i, message.Relay, 'status NOT changed to failed');
+                    }
+                };
+            };
+
+            ko.applyBindings(new PingViewModel([]));
+        });
+    </script>
+}
