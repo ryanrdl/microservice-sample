@@ -1,19 +1,30 @@
 ﻿namespace WebApp2
 {
     using System;
-    using System.Configuration;
+    using Fclp;
     using Microsoft.Owin.Hosting;
 
     class Program
     {
         static void Main(string[] args)
         {
-            var uri ="http://localhost:3579";
+            var p = new FluentCommandLineParser();
 
-            var z = ConfigurationManager.GetSection("MessageForwardingInCaseOfFaultConfig");
-             
+            string uri = null;
+
+            p.Setup<string>('u', "server.urls")
+             .Callback(o => uri = o)
+             .Required();
+
+            var result = p.Parse(args);
+
+            if (result.HasErrors)
+            {
+                throw new ArgumentException(result.ErrorText);
+            }
+
             using (WebApp.Start<Startup>(uri))
-            { 
+            {
                 Console.WriteLine("Your application is running on " + uri);
                 Console.WriteLine("Press any [Enter] to close the host.");
                 Console.ReadLine();

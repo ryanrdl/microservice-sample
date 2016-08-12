@@ -16,5 +16,11 @@ $msbuild = (Resolve-Path "C:\Program Files (x86)\MSBuild\*\Bin\MSBuild.exe")
 & cmd /c start .\PongApi\bin\$configuration\$framework\$platform\PongApi.exe --server.urls=http://0.0.0.0:19702
 & cmd /c start .\PingService\bin\$configuration\$framework\$platform\PingService.exe
 & cmd /c start .\PongService\bin\$configuration\$framework\$platform\PongService.exe
-& cmd /c start .\WebApp2\bin\$configuration\WebApp2.exe
+
+$webUrl = "http://localhost:19700"
  
+& cmd /c start .\WebApp2\bin\$configuration\WebApp2.exe --server.urls=$webUrl
+ 
+Start-Sleep -s 2
+
+& cmd /c start /b $webUrl
